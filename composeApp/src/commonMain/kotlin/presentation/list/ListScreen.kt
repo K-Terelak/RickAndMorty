@@ -1,5 +1,6 @@
 package presentation.list
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -42,7 +43,9 @@ private fun ListScreen(
     val listState = rememberLazyListState()
 
     LazyColumn(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.background),
         state = listState,
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {

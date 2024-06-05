@@ -9,6 +9,7 @@ import org.koin.compose.KoinContext
 import presentation.details.navigation.detailsScreen
 import presentation.details.navigation.navigateToDetails
 import presentation.list.navigation.listScreen
+import presentation.theme.RAMTheme
 
 @Composable
 @Preview
@@ -17,7 +18,7 @@ fun App() {
     KoinContext {
         val navController = rememberNavController()
 
-        MaterialTheme {
+        RAMTheme {
             NavHost(
                 navController = navController,
                 startDestination = Screens.ListScreen.route,

@@ -1,5 +1,6 @@
 package presentation.details
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -47,7 +48,8 @@ private fun DetailsScreen(
 ) {
     Column(
         modifier = modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(MaterialTheme.colors.background),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         TopAppBar(
@@ -56,7 +58,7 @@ private fun DetailsScreen(
             title = {
                 Text(
                     text = "Character details",
-                    color = MaterialTheme.colors.onSurface
+                    color = MaterialTheme.colors.onBackground
                 )
             },
             navigationIcon = {
@@ -74,28 +76,32 @@ private fun DetailsScreen(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h4,
-            text = characterDetailsUiState.list.name
+            text = characterDetailsUiState.list.name,
+            color = MaterialTheme.colors.onBackground
         )
 
         Text(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h6,
-            text = characterDetailsUiState.list.gender
+            text = characterDetailsUiState.list.gender,
+            color = MaterialTheme.colors.onBackground
         )
 
         Text(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h6,
-            text = characterDetailsUiState.list.species
+            text = characterDetailsUiState.list.species,
+            color = MaterialTheme.colors.onBackground
         )
 
         Text(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h6,
-            text = characterDetailsUiState.list.status
+            text = characterDetailsUiState.list.status,
+            color = MaterialTheme.colors.onBackground
         )
     }
 }
